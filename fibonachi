@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Домашняяработа</title>
+</head> 
+<body>
+<h1>Введите любое число</h1>
+<form action="" method="get">
+<input type="text" name="x">
+<input type="submit" >
+</form>
+<?php
+if (isset($_GET['x']))
+{
+$fib1=1;
+$fib2=1;
+$x = $_GET['x'];
+
+while ($fib1<$x) {
+       $fib_sum = $fib2 + $fib1;
+       $fib1 = $fib2;
+       $fib2 = $fib_sum;
+}     
+if ($fib1 >$x){
+	echo "Задуманное число не входит в числовой ряд"; 
+} else {
+echo "Задуманное число входит в числовой ряд"; 
+}
+}
+
+?>
+</body>	
+</html>
