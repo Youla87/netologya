@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<title>Массивы</title>
+	</head>
+	<body>
+<?php
+
+$continents = [
+'Africa'=>['grass snak','anteater','black bear','Mammuthus columbi'],
+'Azia' => ['wild duck','ground squirrel','salamander'], 
+'Evropa' =>['sheep','she goat','pig']];
+
+foreach ($continents as $key => $value) {
+$temp = null;
+  foreach ($value as $animal) {
+    if (strpos($animal, " ")) {
+      $temp[] = $animal;
+      $doubleanimal["$key"] = $temp;
+     
+    }
+
+  }
+}
+foreach ($doubleanimal as $key => $value) {
+
+foreach($value as $word) {
+$kusok = explode(" ",$word);
+$kusok1[] = $kusok[0];
+$kusok2[]= $kusok[1];
+}
+}
+shuffle($kusok2);
+shuffle($kusok1);
+$count = count($kusok1);
+for ($i=0; $i<$count; $i++) {
+
+echo ($kusok1[i] . " " . $kusok2);
+ }
+?>
+</body>
+</html> 
