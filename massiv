@@ -1,10 +1,4 @@
-<html>
-	<head>
-	<title>Массивы</title>
-	</head>
-	<body>
 <?php
-
 $continents = [
 'Africa'=>['grass snak','anteater','black bear','Mammuthus columbi'],
 'Azia' => ['wild duck','ground squirrel','salamander'], 
@@ -25,17 +19,31 @@ foreach ($doubleanimal as $key => $value) {
 
 foreach($value as $word) {
 $kusok = explode(" ",$word);
-$kusok1[] = $kusok[0];
+$kusok1[] = $kusok[0]. "_" .$key;
 $kusok2[]= $kusok[1];
 }
 }
 shuffle($kusok2);
 shuffle($kusok1);
 $count = count($kusok1);
+?>
+
+<html>
+  <head>
+  <title>Массивы</title>
+  </head>
+  <body>
+  <h1>Мифические животные</h1> 
+
+<?php
 for ($i=0; $i<$count; $i++) {
 
-echo ($kusok1[i] . " " . $kusok2);
+$result = explode("_",$kusok1[$i]);
+
+echo "<h2>" . $result[1] ."</h2>" . "<p>" . $result[0] . " ". $kusok2[$i] . "</p>";
+
  }
 ?>
+
 </body>
 </html> 
