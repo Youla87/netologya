@@ -1,0 +1,9 @@
+<?php
+$dannye = file_get_contents('https://api.vk.com/method/newsfeed.search?q=%22%D1%81%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%BC%20%D0%B3%D0%BE%D0%B4%D0%BE%D0%BC%22');
+
+json_decode($dannye);
+
+$result = json_decode($dannye, true);
+
+var_dump($result);
+?>
